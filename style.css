@@ -1,0 +1,215 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #0f172a;
+  background: #e2e8f0;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.app-shell {
+  width: min(960px, 100%);
+  background: #f8fafc;
+  border-radius: 24px;
+  padding: 2rem 2.5rem 3rem;
+  box-shadow: 0 40px 120px rgba(15, 23, 42, 0.2);
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+header p {
+  margin: 0.25rem 0 0;
+  color: #475569;
+}
+
+form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+input,
+button {
+  font: inherit;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.25rem;
+}
+
+input {
+  flex: 1;
+  min-width: 220px;
+  border-color: #cbd5f5;
+  background: #fff;
+}
+
+input:focus {
+  outline: 2px solid #38bdf8;
+  border-color: #38bdf8;
+}
+
+button {
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: background 160ms ease;
+  border: none;
+}
+
+button:hover,
+button:focus-visible {
+  background: #1d4ed8;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(145deg, #1e3a8a, #3b82f6);
+  color: #fff;
+  border-radius: 24px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+}
+
+.current-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.current-grid .city {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.current-grid p {
+  margin: 0.1rem 0;
+}
+
+.current-grid .temp {
+  text-align: right;
+}
+
+#current-temp {
+  font-size: clamp(3rem, 5vw, 3.75rem);
+  font-weight: 700;
+  display: block;
+}
+
+#temp-range {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#forecast {
+  background: rgba(15, 23, 42, 0.92);
+  border-radius: 24px;
+  padding: 1.5rem;
+  color: #f8fafc;
+}
+
+#forecast h2 {
+  margin-top: 0;
+}
+
+#forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.forecast-card {
+  border-radius: 18px;
+  padding: 1rem;
+  background: rgba(248, 250, 252, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.forecast-card p {
+  margin: 0.2rem 0;
+}
+
+.forecast-day {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #bae6fd;
+}
+
+.forecast-icon {
+  font-size: 1.8rem;
+}
+
+.forecast-high {
+  font-weight: 600;
+}
+
+.forecast-low {
+  color: #cbd5f5;
+}
+
+.forecast-precip {
+  color: #7dd3fc;
+  font-size: 0.9rem;
+}
+
+#status {
+  min-height: 1.5rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+
+  form {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  input,
+  button {
+    width: 100%;
+  }
+
+  .current-grid .temp {
+    text-align: left;
+  }
+}
+
